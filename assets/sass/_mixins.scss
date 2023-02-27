@@ -1,0 +1,44 @@
+@use 'variables' as c;
+
+@mixin Flex($direction:1rem,$gap:1rem) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin cta{
+  display: inline-block;
+  padding: 1.25rem 6rem;
+  background:linear-gradient(90deg,c.$Cyan , c.$Blue);
+  color: white;
+  border-radius: 2.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.cta{
+  @include cta();
+
+  &:hover{
+    background: c.$Cyan;
+    filter: brightness(1.15);
+  }
+
+  &-l{
+    color: c.$Cyan;
+    text-decoration: none;
+    transition: 0.3s;
+    border-bottom: 2px solid c.$Cyan;
+    padding-bottom: 0.5rem;
+    
+    &:hover{
+      letter-spacing: 2px;
+      filter: brightness(1.5);
+      
+    }
+  }
+}

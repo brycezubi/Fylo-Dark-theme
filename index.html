@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="./assets/css/index.css">
+
+  <script src="assets/js/index.js" defer></script>
+
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <nav class="nav container">
+      <img src="assets/images/logo.svg" alt="fylo brand ">
+      <ul>
+        <li class="nav__link">Features</li>
+        <li class="nav__link">Team</li>
+        <li class="nav__link">Sign In</li>
+      </ul>
+    </nav>
+
+    <section class="hero container">
+      <img src="assets/images/illustration-intro.png" alt="">
+      <div class="hero__content">
+        <h1 class="hero__title">All your files in one secure location, accessible anywhere.
+        </h1>
+        <p class="paragraph">Fylo stores all your most important files in one secure location. Access them wherever 
+          you need, share and collaborate with friends family, and co-workers.</p>
+        <button class="cta">Get Started</button>
+        </div>
+    </section>
+  </header>
+  <!-- End Header Section -->
+  
+  <!-- Main Section -->
+  <main class="main">
+    
+    <section class="cards container">
+      <article class="card">
+        <img src="assets/images/icon-access-anywhere.svg" alt="card icon opc">
+        <div class="card__content">
+          <h2>Access your files,anywhere</h2>
+          <p>The ability to use a smartphone, tablet, or computer to access your account means your 
+            files follow you everywhere.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/images/icon-security.svg" alt="card icon opc">
+        <div class="card__content">
+          <h2>Security you can trust</h2>
+          <p>2-factor authentication and user-controlled encryption are just a couple of the security 
+            features we allow to help secure your files.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/images/icon-collaboration.svg" alt="card icon opc">
+        <div class="card__content">
+          <h2>Real-time collaboration</h2>
+          <p>Securely share files and folders with friends, family and colleagues for live collaboration. 
+            No email attachments required.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/images/icon-any-file.svg" alt="card icon opc">
+        <div class="card__content">
+          <h2>Store any type of file</h2>
+          <p>Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all 
+            file types to be securely stored and shared.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="productive container">
+      <img src="assets/images/illustration-stay-productive.png" alt="">
+      <div class="productive__content">
+        <h3>Stay productive, wherever you are</h3>
+        <p class="paragraph-sm">Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
+          storage needs.</p>
+        <p class="paragraph-sm">
+          Securely share files and folders with friends, family and colleagues for live collaboration. No email 
+          attachments required.
+        </p>
+
+        <a href="#" class="cta-l">See how fylo works 
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="card__persons container">
+      <div class="card__person">
+        <p class="paragraph-sm">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+          become a well-oiled collaboration machine.</p>
+        <footer class="info">
+          <img src="assets/images/profile-1.jpg" alt="">
+          <div class="info__person">
+            <p>Satish Patel</p>
+            <small>Founder & CEO, Huddle</small>
+          </div>
+        </footer>
+      </div>
+      <div class="card__person">
+        <p class="paragraph-sm">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+          become a well-oiled collaboration machine.</p>
+        <footer class="info">
+          <img src="assets/images/profile-2.jpg" alt="">
+          <div class="info__person">
+            <p>Bruce McKenzie</p>
+            <small>Founder & CEO, Huddle</small>
+          </div>
+        </footer>
+      </div>
+      <div class="card__person">
+        <p class="paragraph-sm">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+          become a well-oiled collaboration machine.</p>
+        <footer class="info">
+          <img src="assets/images/profile-3.jpg" alt="">
+          <div class="info__person">
+            <p>Iva Boyd</p>
+            <small>Founder & CEO, Huddle</small>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+  <!-- End Main Section -->
+
+  <!-- Early Section -->
+  <section class="early">
+    <div class="container">
+      <h3>Get early access today</h3>
+      <p class="paragraph">It only takes a minute to sign up and our free starter tier is extremely generous. If you have any 
+        questions, our support team would be happy to help you.</p>
+      <form action="#" class="early__form" id="formulario">
+        <div class="input__form">
+          <input type="email" placeholder="example@example.com" id="email">
+          <small class="error">mensaje</small>
+          <button type="submit" class="cta">Get Started For Free</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- End Early Section -->
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <svg width="176" height="52" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#FFF" fill-rule="evenodd">
+          <path d="M0 16.372v.128l29.754 13.764 29.859-13.811v-.035L29.754 2.608 0 16.372zm10.727.064l19.028-8.802 19.03 8.802-19.031 8.801-19.027-8.801zM29.754 35.61L0 22.052v5.014l29.754 13.59L59.613 27.02v-5.015L29.754 35.61zm0 10.17L0 32.22v5.015l29.754 13.591L59.613 37.19v-5.014L29.754 45.78zM169.216 26.22a8.564 8.564 0 0 0-2.285-5.892 7.675 7.675 0 0 0-2.473-1.768 7.259 7.259 0 0 0-3.015-.636 7.259 7.259 0 0 0-3.015.636 7.674 7.674 0 0 0-2.473 1.768 8.565 8.565 0 0 0-2.285 5.893 8.564 8.564 0 0 0 2.285 5.893 7.674 7.674 0 0 0 2.473 1.767 7.258 7.258 0 0 0 3.015.637 7.258 7.258 0 0 0 3.015-.637 7.675 7.675 0 0 0 2.473-1.767 8.563 8.563 0 0 0 2.285-5.893zm6.784 0c0 2.044-.377 3.937-1.13 5.681a13.849 13.849 0 0 1-3.11 4.526c-1.319 1.273-2.866 2.279-4.64 3.017-1.775.739-3.667 1.108-5.677 1.108s-3.894-.37-5.653-1.108a14.659 14.659 0 0 1-4.617-3.04 14.116 14.116 0 0 1-3.11-4.55c-.753-1.744-1.13-3.622-1.13-5.633 0-1.98.385-3.842 1.154-5.586a14.718 14.718 0 0 1 3.133-4.573 14.457 14.457 0 0 1 4.617-3.064c1.759-.739 3.627-1.108 5.606-1.108 2.01 0 3.902.369 5.677 1.108 1.774.738 3.321 1.744 4.64 3.017 1.32 1.272 2.356 2.789 3.11 4.549.753 1.76 1.13 3.645 1.13 5.657zm-31.422 13.483a9.087 9.087 0 0 1-1.814.613 9.217 9.217 0 0 1-2.096.236c-1.005 0-1.971-.134-2.898-.4a6.347 6.347 0 0 1-2.426-1.297c-.69-.597-1.24-1.375-1.649-2.334-.408-.958-.612-2.113-.612-3.465V.717h6.925v31.16c0 1.132.228 1.91.683 2.334.456.425.997.637 1.625.637.786 0 1.54-.236 2.262-.707v5.562zM130.02 12.55l-12.249 32.386c-.91 2.42-2.104 4.164-3.58 5.233-1.476 1.068-3.235 1.603-5.277 1.603a8.4 8.4 0 0 1-1.036-.071 7.784 7.784 0 0 1-1.083-.212l-2.262-6.317a8.974 8.974 0 0 0 1.65.59 6.61 6.61 0 0 0 1.6.211c1.069 0 2.042-.243 2.922-.73.879-.488 1.554-1.391 2.025-2.711l.943-2.734-10.506-27.248h7.396l6.266 17.536 5.889-17.536h7.302zm-28.502-4.102H83.806v8.769h17.478v5.94H83.806v16.688h-7.16V2.179h24.873v6.27z"/>
+        </g>
+      </svg>
+      
+      <div class="footer__info">
+        <div class="opc">
+          <i class="fa-sharp fa-solid fa-location-dot"></i>
+          <p>Lorem, ipsum dolor sit amet.Vitae eum voluptas illo dicta expedita, animi totam consequuntur reprehenderit nesciunt sit. Delectus earum quod nisi.</p>
+        </div>
+        <div class="opc">
+          <i class="fa-sharp fa-solid fa-phone-volume"></i>
+          <p>+1-543-123-4567</p>
+        </div>
+        <div class="opc">
+          <i class="fa-sharp fa-regular fa-envelope"></i>
+          <p>exaple@fylo.com</p>
+        </div>
+      </div>
+  
+      <nav class="footer__nav">
+        <ul>
+          <li>About us</li>
+          <li>Jobs</li>
+          <li>Press</li>
+          <li>Blog</li>
+        </ul>
+        <ul>
+          <li>Contact Us</li>
+          <li>Terms</li>
+          <li>Privacy</li>
+        </ul>
+      </nav>
+  
+      <div class="footer__social">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer Section -->
+
+</body>
+</html>

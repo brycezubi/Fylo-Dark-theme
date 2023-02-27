@@ -1,0 +1,403 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "components";
+@use "media" as q;
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Raleway", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+.container {
+  width: calc(100% - 15%);
+  margin-inline: auto;
+  max-width: 120rem;
+}
+
+// HEADER
+.header {
+  min-height: 100vh;
+  background-color: v.$DarkBlue;
+  position: relative;
+
+  &::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:35vh;
+    bottom: 0;
+    background-color: v.$Dark-main;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 10;
+
+    @include q.md{
+      height:20vh;
+    }
+
+    @include q.lg{
+      border : 2px solid red;
+      display: none;
+    }
+
+
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20vh;
+    bottom:35%;
+    background-image: url(../images/bg-curvy-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include q.sm{
+      background-image: url(../images/bg-curvy-desktop.svg);
+    }
+    @include q.md{
+      background-image: url(../images/bg-curvy-desktop.svg);
+      bottom:20%;
+      height: 30vh;
+    }
+
+    @include q.lg{
+      bottom: 0;
+      height: 45vh;
+    }
+
+    @include q.xl{
+      height: 60vh;
+    }
+
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block-start: 2rem;
+
+    @include q.lg{
+      padding-block-start: 3rem;
+    }
+
+    img {
+      max-width: 35%;
+    }
+
+    ul {
+      @include m.Flex();
+
+      @include q.lg{
+        gap: 5rem;
+      }
+      li {
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .hero {
+    min-height: 90vh;
+    @include m.Flex(column, 6rem);
+
+    img {
+      width: 100%;
+      max-width: 60rem;
+      margin-inline: auto;
+      z-index: 100;
+
+    }
+
+    &__content {
+      @include m.Flex(column, 2.5rem);
+      text-align: center;
+      color: white;
+      z-index: 100;
+      max-width: 58rem;
+    }
+  }
+}
+// MAIN
+.main {
+  background-color: v.$Dark-main;
+  padding-block-end: 10rem;
+
+  @include q.xl{
+   padding-block-end: 15rem;
+
+  }
+
+  .cards {
+    display: grid;
+    place-items: center;
+    row-gap: 5rem;
+    
+    @include q.md {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .productive {
+    margin-block: 15rem;
+
+    @include q.lg{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 8rem;
+      margin-block: 20rem;
+
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      max-width: 60rem;
+      margin-inline: auto;
+    }
+
+    &__content {
+      padding-top: 4rem;
+      @include m.Flex(column, 2rem);
+      align-items: flex-start;
+      color: white;
+      max-width: 40rem;
+
+      @include q.sm{
+        padding-top: 6rem;
+      }
+
+      @include q.lg{
+        padding-top: 0;
+        
+        h3{
+          font-size: 2.5rem;
+          max-width: 30rem;
+          
+        }
+      }
+    }
+  }
+
+  .card__persons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    place-items: center;
+    gap: 4rem;
+  }
+}
+
+// Early
+.early {
+  color: white;
+  text-align: center;
+  position: relative;
+  
+  .container{
+    max-width: 75rem;
+    border-radius: 0.85rem;
+    background-color: v.$DarkBlue;
+    padding: 2.5rem 2rem;
+    @include m.Flex(column, 2.5rem);
+
+    
+    @include q.md{
+      padding: 3rem 2.5rem;
+    }
+
+    @include q.lg{
+      padding: 3.5rem 2.5rem;
+    }
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: v.$Dark-main;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: v.$Dark-footer;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+ 
+  &__form {
+    width: 100%;
+
+    .input__form {
+      width: 90%;
+      margin-inline: auto;
+      @include m.Flex(column, 0.25rem);
+      position: relative;
+
+    
+      input {
+        width: 100%;
+        padding: 1.25rem 2rem;
+        border-radius: 2.5rem;
+        border: none;
+      }
+      .error{
+        color: transparent;
+        padding-block: 0.25rem;
+        display: block;
+        text-align: left;
+      }
+      .cta {
+        width: 100%;
+      }
+
+      @include q.md{
+        @include m.Flex(row, 1rem);
+
+        .cta{
+          width: 70%;
+        }
+
+        .error{
+          position: absolute;
+          bottom: -25px;
+          left: 10px;
+        }
+      }
+
+      @include q.lg{
+        .cta{
+          width: 60%;
+        }
+      }
+     
+    }
+  }
+}
+
+// FOOTER
+.footer {
+  background-color: v.$Dark-footer;
+  color: white;
+  padding-block-end: 5rem;
+  padding-block-start: 10rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include q.md{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include q.lg{
+      grid-template-columns:  1fr 1fr 1fr;
+    }
+  }
+
+  &__info {
+    @include m.Flex(column, 1.5rem);
+    align-items: flex-start;
+    .opc {
+      @include m.Flex(row, 1.5rem);
+      justify-content: flex-start;
+
+      &:nth-child(1) {
+        align-items: flex-start;
+
+        i {
+          padding-top: 0.5rem;
+        }
+      }
+    }
+    grid-column: 1/2
+  }
+
+
+  &__nav{
+    @include m.Flex(column,4rem);
+    align-items: flex-start;
+
+    ul{
+      @include m.Flex(column);
+      align-items: flex-start;
+      li{
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+
+    }
+    
+    @include q.md{
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  &__social{
+    @include m.Flex(row,2rem);
+    grid-column: 2/3;
+
+    
+    i{
+      border-radius: 50%;
+      border: 1px solid white;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+
+      &:hover{
+        background-color: blue;
+        border: 1px solid transparent;
+      }
+    }
+
+    @include q.md{
+      justify-content: flex-end;
+    }
+    @include q.lg{
+      grid-column: 3/4;
+      align-self: flex-start;
+    }
+  }
+}
